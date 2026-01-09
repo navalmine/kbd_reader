@@ -9,3 +9,5 @@ all:
 
 clean:
 	$(MAKE) -C $(KDIR) M=$(PWD) clean
+	
+#bear -- make -j generate compile_commands.json

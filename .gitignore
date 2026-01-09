@@ -10,3 +10,7 @@
 /Module.symvers
 /modules.order
 /kernel/.tmp_versions
+/.cache
+/.vscode
+/try
+*.cache

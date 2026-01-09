@@ -1,8 +1,4 @@
-# codex_demo_kbd_sim
-
-This project demonstrates a safe, simulated keyboard scancode device and a Qt UI that reads it.
-It does **not** hook keyboard interrupts or capture real input.
-It requires Clang for both user-space and kernel module builds.
+# serio_hook_for_keyboard_recording
 
 ## Layout
 
@@ -24,7 +20,7 @@ This runs tests first, then builds the targets if tests pass.
 ```bash
 cd kernel
 make
-sudo insmod kbd_sim.ko interval_ms=120
+sudo insmod kbd_sim.ko
 ls -l /dev/kbd
 ```
 
@@ -45,10 +41,3 @@ Optional device override:
 ```bash
 DEVICE_PATH=/dev/kbd ./build/app/kbd_ui
 ```
-
-Stats are stored at `~/.local/share/codex_demo/kbd_sim_ui/stats.txt`.
-
-## Notes
-
-- The device emits a repeating simulated scancode sequence. It does not read hardware input.
-- "Total count" is persisted to the stats file. To approximate "since boot", run the UI at boot or clear the stats file at boot.
